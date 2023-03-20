@@ -14,34 +14,35 @@ class TodoController extends Controller
 
         // $users = DB::select('select * from users');
         // return $users;
-        $todo = collect([
-            ['id'=> '1',
-            'todo'=> 'Rokomari - new thing new thing new thing new thing 1'],
-            ['id'=> '2',
-            'todo'=> 'Rokomari - new thing new thing new thing new thing'],
-            ['id'=> '3',
-            'todo'=> 'Rokomari - new thing new thing new thing new thing 3'],
-            ['id'=> '4',
-            'todo'=> 'Rokomari - new thing new thing new thing new thing'],
-            ['id'=> '5',
-            'todo'=> 'Rokomari - new thing new thing new thing new thing 5'],
+        // $todo = collect([
+        //     ['id'=> '1',
+        //     'todo'=> 'Rokomari - new thing new thing new thing new thing 1'],
+        //     ['id'=> '2',
+        //     'todo'=> 'Rokomari - new thing new thing new thing new thing'],
+        //     ['id'=> '3',
+        //     'todo'=> 'Rokomari - new thing new thing new thing new thing 3'],
+        //     ['id'=> '4',
+        //     'todo'=> 'Rokomari - new thing new thing new thing new thing'],
+        //     ['id'=> '5',
+        //     'todo'=> 'Rokomari - new thing new thing new thing new thing 5'],
 
-        ]);
+        // ]);
 
-        $user = new User();
-        $user->name = 'EV';
-        $user->email = 'EV@e.com';
-        $user->phone = '01856493398';
-        $user->todo = $todo;
-        $user->password = '123456';
-        $user->save();
+        // $user = new User();
+        // $user->name = 'EV';
+        // $user->phone = '01856493398';
+        // $user->todo = $todo;
+        // $user->password = bcrypt('123456', [round('12')]);
+        // $user->save();
         // User::where('id', 2)->delete();
         // $user = User::all();
         // return $user;
 
         // dd($user);
         
+        $todos = DB::select('select * from todos');
 
-        return view('todo');
+        // dd($todos);
+        return view('todo')->with('todos', $todos);
     }
 }

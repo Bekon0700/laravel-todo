@@ -1,0 +1,81 @@
+.main-todo-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: start;
+
+    .title {
+        width: 100%;
+        padding: 8px 0;
+        font-size: 32px;
+        font-weight: 700;
+        border-bottom: 1px dotted #ccc;
+    }
+
+    .todo-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+    
+            .input-box {
+                flex-grow: 2;
+                padding: 8px;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid #ccc;
+                font-size: 24px;
+    
+                &::placeholder {
+                    color: #ccc;
+                }
+            }
+            
+            .add-btn {
+                flex-grow: 1;
+                padding: 8px 0;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                background-color: rgb(195, 157, 86);
+                font-size: 22px;
+                cursor: pointer;
+            }
+    
+        }
+
+        .todos {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            
+            .single-todo {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                user-select: none;
+                cursor: pointer;
+            }
+
+            .single-todo::before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+    color: red;
+}

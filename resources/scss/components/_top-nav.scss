@@ -1,0 +1,16 @@
+.nav-container {
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+
+    a {
+        padding: 8px 4px;
+        border-bottom: 3px solid #ccc;
+        cursor: pointer;
+
+        &:hover {
+            color: #1c45368d;
+            border-color: #1c45368d;
+        }
+    }
+}

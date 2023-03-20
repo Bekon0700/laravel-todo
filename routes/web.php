@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TodoController::class, 'getAllTodo']);
+Route::get('/registration', [UserController::class, 'userSignUp']);
+Route::post('/registration', [UserController::class, 'userSignUpPost']);
+
+Route::get('/login', [UserController::class, 'userSignIn']);
+Route::post('/login', [UserController::class, 'userSignInPost']);
+
+
+Route::get('/todos', [TodoController::class, 'getAllTodo']);

@@ -4,7 +4,7 @@
         <a class="">Register Todo</a>
         <a class="">My Account</a>
     @else
-        <a class="">Log in</a>
-        <a class="">Registration</a>
+        <a href="/login" class="">Log in</a>
+        <a href="/registration" class="">Registration</a>
     @endif
 </div>

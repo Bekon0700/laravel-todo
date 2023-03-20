@@ -16,7 +16,7 @@ class UserController extends Controller
     public function userSignUpPost() {
         $name = request('userName');
         $phone = request('userPhone');
-        $password = bcrypt(request('userPassword'));
+        $password = Hash::make(request('userPassword'));
         DB::insert('insert into users (name, phone, password) values (?, ?, ?)', [$name, $phone, $password]);
         return redirect('/login');
     }
@@ -29,9 +29,10 @@ class UserController extends Controller
         $phone = request('userPhone');
         $password = bcrypt(request('userPassword'));
         $user = DB::select('select * from users where phone= ? ', [$phone]);
-        if(Hash::check($password, $user[0]->password)) {
+        if(Hash::Check($password, $user[0]->password)) {
             return redirect('/todos');
         }
-        return view('signin');
+        return Hash::make($password);
+        // return view('signin');
     }
 }
